@@ -1,13 +1,16 @@
 document.getElementById("checkBtn").addEventListener("click", function () {
-  const text = document.getElementById("inputText").value.toLowerCase().replace(/[^a-z0-9]/g, "");
-  const reversed = text.split("").reverse().join("");
+  const input = document.getElementById("textInput").value;
+  const reversed = input.split("").reverse().join("");
   const result = document.getElementById("result");
 
-  if (text === "") {
-    result.textContent = "Please enter some text!";
-  } else if (text === reversed) {
-    result.textContent = "Yes, it's a palindrome!";
+  if (input === "") {
+    result.textContent = "Please enter text.";
+    result.style.color = "orange";
+  } else if (input === reversed) {
+    result.textContent = `"${input}" is a palindrome!`;
+    result.style.color = "green";
   } else {
-    result.textContent = "No, it's not a palindrome.";
+    result.textContent = `"${input}" is not a palindrome.`;
+    result.style.color = "red";
   }
 });
