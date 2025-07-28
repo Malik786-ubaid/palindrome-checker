@@ -15,3 +15,11 @@ document.getElementById("checkBtn").addEventListener("click", function () {
     result.style.color = "red";
   }
 });
+
+
+document.getElementById("resetBtn").addEventListener("click", function () {
+  document.getElementById("textInput").value = "";
+  const result = document.getElementById("result");
+  result.textContent = "";
+  result.style.color = "black";
+});
